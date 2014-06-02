@@ -77,7 +77,7 @@ namespace simplicity
 		void WinAPIEngine::advance()
 		{
 			MSG message;
-			while (PeekMessage(&message, NULL, 0, 0, PM_REMOVE))
+			while (PeekMessage(&message, nullptr, 0, 0, PM_REMOVE))
 			{
 				TranslateMessage(&message);
 				DispatchMessage(&message);
@@ -92,8 +92,8 @@ namespace simplicity
 			int adjustedWidth = adjustedRectangle.right - adjustedRectangle.left;
 			int adjustedHeight = adjustedRectangle.bottom - adjustedRectangle.top;
 
-			window = CreateWindowEx(NULL, "WindowClass", title.c_str(), WS_OVERLAPPEDWINDOW, 0, 0, adjustedWidth,
-				adjustedHeight, NULL, NULL, instance, NULL);
+			window = CreateWindowEx(0, "WindowClass", title.c_str(), WS_OVERLAPPEDWINDOW, 0, 0, adjustedWidth,
+				adjustedHeight, nullptr, nullptr, instance, nullptr);
 		}
 
 		RECT WinAPIEngine::getAdjustedRectangle() const
@@ -141,7 +141,7 @@ namespace simplicity
 			ZeroMemory(&windowClass, sizeof(WNDCLASSEX));
 
 			windowClass.cbSize = sizeof(WNDCLASSEX);
-			windowClass.hCursor = LoadCursor(NULL, IDC_ARROW);
+			windowClass.hCursor = LoadCursor(nullptr, IDC_ARROW);
 			windowClass.hInstance = instance;
 			windowClass.lpfnWndProc = handleEvent;
 			windowClass.lpszClassName = "WindowClass";
