@@ -42,7 +42,7 @@ namespace simplicity
 		void fireKeyboardButtonUpEvent(WPARAM key)
 		{
 			KeyboardButtonEvent event = getKeyboardButtonEvent(key);
-			event.buttonState = Button::UP;
+			event.buttonState = Button::State::UP;
 
 			Messages::send(Subject::KEYBOARD_BUTTON, &event);
 		}
@@ -73,55 +73,55 @@ namespace simplicity
 
 			if (key == VK_F1)
 			{
-				keyboardButtonEvent.button = Keyboard::F1;
+				keyboardButtonEvent.button = Keyboard::Button::F1;
 			}
 			else if (key == VK_F2)
 			{
-				keyboardButtonEvent.button = Keyboard::F2;
+				keyboardButtonEvent.button = Keyboard::Button::F2;
 			}
 			else if (key == VK_F3)
 			{
-				keyboardButtonEvent.button = Keyboard::F3;
+				keyboardButtonEvent.button = Keyboard::Button::F3;
 			}
 			else if (key == VK_F4)
 			{
-				keyboardButtonEvent.button = Keyboard::F4;
+				keyboardButtonEvent.button = Keyboard::Button::F4;
 			}
 			else if (key == VK_F5)
 			{
-				keyboardButtonEvent.button = Keyboard::F5;
+				keyboardButtonEvent.button = Keyboard::Button::F5;
 			}
 			else if (key == VK_F6)
 			{
-				keyboardButtonEvent.button = Keyboard::F6;
+				keyboardButtonEvent.button = Keyboard::Button::F6;
 			}
 			else if (key == VK_F7)
 			{
-				keyboardButtonEvent.button = Keyboard::F7;
+				keyboardButtonEvent.button = Keyboard::Button::F7;
 			}
 			else if (key == VK_F8)
 			{
-				keyboardButtonEvent.button = Keyboard::F8;
+				keyboardButtonEvent.button = Keyboard::Button::F8;
 			}
 			else if (key == VK_F9)
 			{
-				keyboardButtonEvent.button = Keyboard::F9;
+				keyboardButtonEvent.button = Keyboard::Button::F9;
 			}
 			else if (key == VK_F10)
 			{
-				keyboardButtonEvent.button = Keyboard::F10;
+				keyboardButtonEvent.button = Keyboard::Button::F10;
 			}
 			else if (key == VK_F11)
 			{
-				keyboardButtonEvent.button = Keyboard::F11;
+				keyboardButtonEvent.button = Keyboard::Button::F11;
 			}
 			else if (key == VK_F12)
 			{
-				keyboardButtonEvent.button = Keyboard::F12;
+				keyboardButtonEvent.button = Keyboard::Button::F12;
 			}
 			else if (key == VK_TAB)
 			{
-				keyboardButtonEvent.button = Keyboard::TAB;
+				keyboardButtonEvent.button = Keyboard::Button::TAB;
 			}
 			else if (winapiAsciiKeyboardButtonMap.find(static_cast<unsigned char>(key)) != winapiAsciiKeyboardButtonMap.end())
 			{
