@@ -37,11 +37,11 @@ namespace simplicity
 				 */
 				WinAPIEngine(const std::string& title, HINSTANCE instance, int commandShow);
 
-				void advance();
+				void advance() override;
 
-				int getHeight() const;
+				int getHeight() const override;
 
-				int getWidth() const;
+				int getWidth() const override;
 
 				/**
 				 * <p>
@@ -52,15 +52,15 @@ namespace simplicity
 				 */
 				HWND getWindow() const;
 
-				bool isFullscreen() const;
+				bool isFullscreen() const override;
 
-				void onPlay();
+				void onPlay() override;
 
-				void setFullscreen(bool fullscreen);
+				void setFullscreen(bool fullscreen) override;
 
-				void setHeight(int height);
+				void setHeight(int height) override;
 
-				void setWidth(int width);
+				void setWidth(int width) override;
 
 			private:
 				int commandShow;
