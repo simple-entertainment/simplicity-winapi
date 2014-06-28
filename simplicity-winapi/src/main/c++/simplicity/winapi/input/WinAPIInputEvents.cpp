@@ -36,7 +36,7 @@ namespace simplicity
 			KeyboardButtonEvent keyboardButtonEvent = getKeyboardButtonEvent(key);
 			keyboardButtonEvent.buttonState = Button::State::DOWN;
 			
-			Messages::send(Subject::KEYBOARD_BUTTON, &keyboardButtonEvent);
+			Messages::send(Message(Subject::KEYBOARD_BUTTON, &keyboardButtonEvent));
 		}
 
 		void fireKeyboardButtonUpEvent(WPARAM key)
@@ -44,7 +44,7 @@ namespace simplicity
 			KeyboardButtonEvent event = getKeyboardButtonEvent(key);
 			event.buttonState = Button::State::UP;
 
-			Messages::send(Subject::KEYBOARD_BUTTON, &event);
+			Messages::send(Message(Subject::KEYBOARD_BUTTON, &event));
 		}
 
 		void fireMouseButtonEvent(Mouse::Button button, Button::State state, LPARAM position)
@@ -55,7 +55,7 @@ namespace simplicity
 			mouseButtonEvent.x = static_cast<int>(LOWORD(position));
 			mouseButtonEvent.y = static_cast<int>(HIWORD(position));
 
-			Messages::send(Subject::MOUSE_BUTTON, &mouseButtonEvent);
+			Messages::send(Message(Subject::MOUSE_BUTTON, &mouseButtonEvent));
 		}
 
 		void fireMouseMoveEvent(LPARAM position)
@@ -64,7 +64,7 @@ namespace simplicity
 			mouseMoveEvent.x = static_cast<int>(LOWORD(position));
 			mouseMoveEvent.y = static_cast<int>(HIWORD(position));
 
-			Messages::send(Subject::MOUSE_MOVE, &mouseMoveEvent);
+			Messages::send(Message(Subject::MOUSE_MOVE, &mouseMoveEvent));
 		}
 
 		KeyboardButtonEvent getKeyboardButtonEvent(WPARAM key)
